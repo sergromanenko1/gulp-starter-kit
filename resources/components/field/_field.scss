@@ -1,0 +1,48 @@
+.field {
+	display: block;
+	position: relative;
+}
+
+.field__text {
+	display: block;
+	width: 100%;
+	height: 50px;
+	padding: 0 15px;
+	font-size: 16px;
+	font-variant-numeric: lining-nums;
+	font-feature-settings: 'lnum' 1;
+	border: none;
+	background: #eee;
+	border-radius: 12px;
+	transition: 0.2s;
+
+	&::-webkit-input-placeholder {
+		color: gray;
+	}
+
+	&::-moz-placeholder {
+		color: gray;
+		opacity: 1;
+	}
+
+	&:focus {
+		box-shadow: inset 0 0 0 2px $c_prime;
+	}
+
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus,
+	&:-webkit-autofill:active {
+		box-shadow: inset 0 0 0 100vw white;
+		-webkit-text-fill-color: black;
+		transition: 0.2s, box-shadow none;
+	}
+
+	&_area {
+		min-height: 180px;
+		padding-top: 12px;
+		padding-bottom: 12px;
+		line-height: 1.4;
+		resize: vertical;
+	}
+}

@@ -1,0 +1,85 @@
+.loader {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba($bg_light, 0.8);
+	opacity: 0;
+	transition: $t_anim;
+
+	&_active {
+		display: flex;
+	}
+
+	&_animate {
+		opacity: 1;
+		visibility: visible !important;
+	}
+
+	&_button {
+		background: rgba($c_prime, 0.8);
+	}
+}
+
+.loader__content {
+	.loader_button & {
+		transform: scale(0.7);
+	}
+}
+
+.loader__spinner {
+	animation: rotate 2s linear infinite;
+	width: to_vw(50px);
+	height: to_vw(50px);
+
+	@include tablet() {
+		width: to_vw(50px);
+		height: to_vw(50px);
+	}
+
+	@include phone() {
+		width: to_vw(50px);
+		height: to_vw(50px);
+	}
+
+	@keyframes rotate {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+}
+
+.loader__path {
+	fill: none;
+	stroke: $c_prime;
+	stroke-linecap: round;
+	stroke-width: 4px;
+	animation: dash 1.5s ease-in-out infinite;
+
+	.loader_button & {
+		stroke: white;
+		stroke-width: 5px;
+	}
+
+	@keyframes dash {
+		0% {
+			stroke-dasharray: 1, 150;
+			stroke-dashoffset: 0;
+		}
+
+		50% {
+			stroke-dasharray: 90, 150;
+			stroke-dashoffset: -35;
+		}
+
+		100% {
+			stroke-dasharray: 90, 150;
+			stroke-dashoffset: -124;
+		}
+	}
+}

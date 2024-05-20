@@ -1,0 +1,120 @@
+.select {
+	position: relative;
+	z-index: 1;
+	font-size: 16px;
+	line-height: 1;
+	user-select: none;
+
+	&_active {
+		z-index: 2;
+	}
+}
+
+.select__default {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+
+	.select_mobile & {
+		z-index: 3;
+	}
+}
+
+.select__head {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	height: 44px;
+	padding-left: 15px;
+	padding-right: 38px;
+	line-height: 44px;
+	white-space: nowrap;
+	background: white;
+	border: 1px solid gray;
+	border-radius: 3px;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: calc((100% - 6px) / 2);
+		right: 15px;
+		margin: auto;
+		width: 9px;
+		height: 6px;
+		background: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m0.17544 1.2401c0.54382 0.60763 1.0566 1.2472 1.5872 1.8684 0.77103 0.91387 1.5377 1.833 2.3115 2.7435 0.34442 0.29256 0.87589 0.12061 1.0727-0.258 1.2464-1.4779 2.4993-2.9506 3.7417-4.4319 0.2235-0.36537 0.11057-0.99789-0.35339-1.1074-0.39091-0.18721-0.76349 0.14471-0.97187 0.44902-1.0182 1.212-2.0363 2.4239-3.0545 3.6359-1.0819-1.2887-2.1637-2.5773-3.2456-3.866-0.29446-0.43703-1.0804-0.30689-1.2147 0.20831-0.095059 0.25193-0.042217 0.54992 0.12698 0.75815z'/%3E%3C/svg%3E%0A");
+		background-repeat: no-repeat;
+		background-position: center;
+		transition: $t_anim;
+	}
+
+	.select_active &::after {
+		transform: rotateX(-180deg);
+	}
+}
+
+.select__list {
+	position: absolute;
+	z-index: 1;
+	top: 44px;
+	left: 0;
+	min-width: 100%;
+	padding: 0;
+	margin: 0;
+	margin-top: -1px;
+	border: 1px solid gray;
+	border-radius: 0 0 3px 3px;
+	overflow: hidden;
+	opacity: 0;
+	visibility: hidden;
+	transform: translate3d(0, -5px, 0);
+	transition: 0.14s;
+
+	.select_active & {
+		opacity: 1;
+		visibility: visible;
+		transform: translate3d(0, 0, 0);
+	}
+
+	.select_mobile & {
+		display: none;
+	}
+}
+
+.select__item {
+	height: 44px;
+	padding: 0 15px;
+	margin: 0;
+	line-height: 44px;
+	color: gray;
+	white-space: nowrap;
+	border-top: 1px solid gray;
+	background: white;
+	cursor: pointer;
+
+	&:first-child {
+		border-top: none;
+	}
+
+	&_active {
+		color: white;
+		background: $c_prime;
+	}
+
+	&_disable {
+		color: gray;
+		cursor: default;
+
+		&.select__item_active {
+			color: white;
+			background: gray;
+		}
+	}
+}

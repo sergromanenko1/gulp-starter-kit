@@ -1,0 +1,25 @@
+/*! main */
+@import '../../node_modules/swiper/swiper-bundle';
+@import '../../node_modules/photoswipe/dist/photoswipe';
+
+@import '../components/variables/variables';
+@import '../components/functions/functions';
+@import '../components/mixins/mixins';
+@import '../components/sprite/sprite';
+@import '../components/base/base';
+
+@import '../components/page/page';
+@import '../components/field/field';
+@import '../components/select/select';
+@import '../components/checkbox/checkbox';
+@import '../components/button/button';
+@import '../components/loader/loader';
+@import '../components/form/form';
+@import '../components/breadcrumbs/breadcrumbs';
+@import '../components/pagination/pagination';
+@import '../components/popup/popup';
+@import '../components/photoswipe/photoswipe';
+@import '../components/header/header';
+@import '../components/footer/footer';
+
+@import '../components/home/home';
