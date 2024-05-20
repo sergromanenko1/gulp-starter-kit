@@ -35,11 +35,11 @@ In the terminal, run:
 ```
 gulp
 ```
-The BrowserSync script will be offered in the terminal to restart the local PHP server when files are changed, it must be inserted before the closing </body>
+The BrowserSync script will be offered in the terminal to restart the local PHP server when files are changed, it must be inserted before the closing &lt;/body&gt;
 But if the proxy server is disabled, access from other devices on the local Wi-Fi network will not work.
 
 Before uploading to the hosting in the file templates/header.php on line 2, set any numeric value to the VAR constant.
-If the proxy server was disabled and the Browser Sync script was added before the closing </body> to reload the local PHP server, then delete the added script.
+If the proxy server was disabled and the Browser Sync script was added before the closing &lt;/body&gt; to reload the local PHP server, then delete the added script.
 To create an optimized version of the /public/ folder, run:
 ```
 gulp minify
@@ -59,21 +59,21 @@ The listed folders and files should not be uploaded to the hosting, they are onl
 
 ## File structure:
 
-/templates/ - contains duplicate HTML blocks
-/public/ - Contains frontend files to upload to the hosting (FILES IN THE /public/ FOLDER SHOULD NOT BE EDITED!)
-/public/fonts/ - Contains TTF and WOFF fonts
-/public/img/ - Contains compressed PNG, JPG, SVG images, PNG sprite and SVG sprite
-/public/css/main.css - Contains all compiled SCSS files from the /resources/components folder/
-/public/js/main.js - Contains all JS files from the /resources/components folder/
-/resources/ - Contains frontend files for development (FILES IN THIS FOLDER ARE BEING EDITED!)
-/resources/components/ - Contains folders of BEM blocks with SCSS and JS files
-/resources/fonts/ - Contains TTF fonts, WOFF are created automatically
-/resources/img/
-/resources/img/sprite-png/ - Contains images for a PNG sprite
-/resources/img/sprite-svg/ - Contains images for the SVG sprite
-/resources/img/main/ - Contains images of the content
-/resources/img/scss/main.js - A file for connecting JS files of plug-ins and BEM blocks
-/resources/img/js/main.scss - A file for connecting CSS plugin files and CSS BEM blocks
+/templates/ - contains duplicate HTML blocks<br>
+/public/ - Contains frontend files to upload to the hosting (FILES IN THE /public/ FOLDER SHOULD NOT BE EDITED!)<br>
+/public/fonts/ - Contains TTF and WOFF fonts<br>
+/public/img/ - Contains compressed PNG, JPG, SVG images, PNG sprite and SVG sprite<br>
+/public/css/main.css - Contains all compiled SCSS files from the /resources/components folder/<br>
+/public/js/main.js - Contains all JS files from the /resources/components folder/<br>
+/resources/ - Contains frontend files for development (FILES IN THIS FOLDER ARE BEING EDITED!)<br>
+/resources/components/ - Contains folders of BEM blocks with SCSS and JS files<br>
+/resources/fonts/ - Contains TTF fonts, WOFF are created automatically<br>
+/resources/img/<br />
+/resources/img/sprite-png/ - Contains images for a PNG sprite<br>
+/resources/img/sprite-svg/ - Contains images for the SVG sprite<br>
+/resources/img/main/ - Contains images of the content<br>
+/resources/img/scss/main.js - A file for connecting JS files of plug-ins and BEM blocks<br>
+/resources/img/js/main.scss - A file for connecting CSS plugin files and CSS BEM blocks<br>
 
 ## Gulp tasks
 
