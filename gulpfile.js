@@ -267,7 +267,7 @@ function buildFonts() {
 
 function runServer(cb) {
 	browserSync({
-		proxy: 'http://localhost/gulp-start3/',
+		proxy: 'http://localhost/gulp-starter-kit/',
 		notify: false,
 		ui:     false,
 		ghostMode: {
